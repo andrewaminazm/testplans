@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import PostPage from "./pages/PostPage";
 import CategoryPage from "./pages/CategoryPage";
 import TemplatesPage from "./pages/TemplatesPage";
+import AboutPage from "./pages/AboutPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/post/:slug" element={<PostPage />} />
           <Route path="/category/:slug" element={<CategoryPage />} />
           <Route path="/templates" element={<TemplatesPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </main>
       <Footer />

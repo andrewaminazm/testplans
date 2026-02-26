@@ -37,6 +37,7 @@ export default function Footer() {
               { label: "Test Strategy", path: "/category/test-strategy" },
               { label: "AI in QA", path: "/category/ai-in-qa" },
               { label: "Best Practices", path: "/category/best-practices" },
+              { label: "About", path: "/about" },
             ].map(l => (
               <Link key={l.path} to={l.path} style={{ display: "block", marginBottom: 9, fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", transition: "color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#fff"}
@@ -78,21 +79,32 @@ export default function Footer() {
             © 2026 QAInsight. Built for QA professionals everywhere.
           </span>
           <div style={{ display: "flex", gap: 12 }}>
-            {[Github, Twitter, Linkedin].map((Icon, i) => (
-              <div key={i} style={{
-                width: 34, height: 34,
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 8,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                cursor: "pointer",
-                transition: "background 0.2s",
-              }}
-                onMouseEnter={e => e.currentTarget.style.background = "rgba(99,102,241,0.2)"}
+            {[
+              { Icon: Github, href: "https://github.com/andrewaminazm/testplans", label: "GitHub" },
+              { Icon: Twitter, href: "#", label: "Twitter" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/andrew-amin-48763a194/", label: "LinkedIn" },
+            ].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                style={{
+                  width: 34, height: 34,
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 8,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "background 0.2s",
+                  textDecoration: "none",
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = label === "LinkedIn" ? "rgba(10,102,194,0.3)" : "rgba(99,102,241,0.2)"}
                 onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.05)"}
               >
                 <Icon size={15} color="rgba(255,255,255,0.55)" />
-              </div>
+              </a>
             ))}
           </div>
         </div>

@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Templates", path: "/templates" },
   { label: "Strategy", path: "/category/test-strategy" },
   { label: "AI in QA", path: "/category/ai-in-qa" },
+  { label: "About", path: "/about" },
 ];
 
 export default function Navbar() {
