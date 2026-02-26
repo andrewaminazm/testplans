@@ -43,6 +43,16 @@ Open the URL shown in the terminal (e.g. `http://localhost:5173/` or `http://loc
     └── package.json
 ```
 
+## Deploy on Netlify
+
+The repo includes `netlify.toml` (root and `qa-blog/`) and `qa-blog/public/_redirects` so all routes serve `index.html` (SPA). If you still see "Page not found":
+
+1. In Netlify: **Site settings → Build & deploy → Build settings**
+2. Set **Base directory** to `qa-blog` (or leave empty if using root config).
+3. Set **Build command** to `npm run build`.
+4. Set **Publish directory** to `qa-blog/dist` (or `dist` if base is `qa-blog`).
+5. Trigger a **Clear cache and deploy site** and redeploy.
+
 ## Tech stack
 
 - **React 19** + **Vite 7**

@@ -1,0 +1,11 @@
+# When Netlify base directory is "qa-blog", this file is used.
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# SPA: serve index.html for every path so React Router can handle routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
