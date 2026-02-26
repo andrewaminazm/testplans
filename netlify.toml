@@ -1,0 +1,11 @@
+# Build the app in qa-blog
+[build]
+  base = "qa-blog"
+  command = "npm run build"
+  publish = "qa-blog/dist"
+
+# SPA fallback: serve index.html for all routes (handled by React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
